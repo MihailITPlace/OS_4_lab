@@ -58,6 +58,11 @@ public class MainWindow extends JFrame {
                 try {
                     int sizeFile = Integer.parseInt(textFieldSize.getText());
                     String fileName = textField.getText();
+
+                    if (fileName.isEmpty()) {
+                        throw new Exception("Имя файла не должно быть пустым");
+                    }
+
                     inst.addFile(fileName, sizeFile);
                     listModel.addElement(textField.getText());
                     tablePanel.repaint();
