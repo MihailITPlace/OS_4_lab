@@ -77,6 +77,8 @@ public class PhysicalMemoryTable {
     public void deleteFile(String name) {
         int i = nameBlockTable.get(name);
 
+        nameBlockTable.remove(name);
+
         while (true) {
             int next =  table.get(i).getNext();
 
